@@ -43,4 +43,4 @@ RUN DJANGO_SETTINGS_MODULE=hello_world.settings.production \
 
 EXPOSE 8000
 
-CMD python3 backend/manage.py runserver 0.0.0.0:8000
+CMD gunicorn backend/hello_world.wsgi:application --bind 0.0.0.0:8000
